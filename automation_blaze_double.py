@@ -13,9 +13,7 @@ options.add_argument('--headless')
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
 driver.get('https://blaze.com/pt/games/double')
 
-
 first = True
-
 
 while True:
     page_source = driver.page_source
@@ -25,7 +23,6 @@ while True:
     if flag == 'start' and first == True:
         entries_div = soup.find("div", {"class": "entries main"})
         entrys = entries_div.find_all("div", {"class": "roulette-tile"})
-        
         entrys = entrys[0:5]
         box_list = []
         
